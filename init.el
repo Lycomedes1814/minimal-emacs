@@ -24,7 +24,8 @@
       shift-select-mode t
       delete-by-moving-to-trash t
       ediff-window-setup-function #'ediff-setup-windows-plain
-      ediff-split-window-function #'split-window-horizontally)
+      ediff-split-window-function #'split-window-horizontally
+      dired-listing-switches "-lAh --group-directories-first")
 
 (add-hook 'eval-expression-minibuffer-setup-hook #'company-mode)
 (add-hook 'before-save-hook #'whitespace-cleanup)
