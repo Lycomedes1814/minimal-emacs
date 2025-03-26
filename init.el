@@ -42,6 +42,8 @@
 (bind-key* "M-j" 'dired-jump)
 (bind-key* "M-m" 'magit)
 (bind-key* "C-z" 'bury-buffer)
+(bind-key* "C-," 'execute-extended-command)
+(bind-key* "C-." 'query-replace-regexp)
 
 (fset #'yes-or-no-p #'y-or-n-p)
 
