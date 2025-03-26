@@ -42,6 +42,7 @@
 (bind-key* "M-l" 'find-file)
 (bind-key* "M-j" 'dired-jump)
 (bind-key* "M-m" 'magit)
+(bind-key* "M-i" 'imenu)
 (bind-key* "C-z" 'bury-buffer)
 (bind-key* "C-," 'execute-extended-command)
 (bind-key* "C-." 'query-replace-regexp)
