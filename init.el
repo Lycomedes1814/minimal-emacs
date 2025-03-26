@@ -18,9 +18,7 @@
 (setq backup-directory-alist `((".*" . ,(concat user-emacs-directory "backups")))
       custom-file (concat user-emacs-directory "custom.el")
       indent-tabs-mode nil
-      require-final-newline t
-      ediff-window-setup-function #'ediff-setup-windows-plain
-      ediff-split-window-function #'split-window-horizontally)
+      require-final-newline t)
 
 (add-hook 'eval-expression-minibuffer-setup-hook #'company-mode)
 (add-hook 'before-save-hook #'whitespace-cleanup)
@@ -37,6 +35,10 @@
 (bind-key* "M-l" 'find-file)
 (bind-key* "M-j" 'dired-jump)
 (bind-key* "M-m" 'magit)
+
+;; Now, let the ediff plumbing commence
+(setq ediff-window-setup-function #'ediff-setup-windows-plain
+      ediff-split-window-function #'split-window-horizontally)
 
 (defun disable-y-or-n-p (orig-fun &rest args)
   (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
