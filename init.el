@@ -8,6 +8,7 @@
 (column-number-mode 1)
 (context-menu-mode 1)
 (electric-pair-mode 1)
+(delete-selection-mode 1)
 (auto-save-visited-mode 1)
 
 (use-package vertico	:ensure t :config (vertico-mode))
@@ -17,8 +18,11 @@
 
 (setq backup-directory-alist `((".*" . ,(concat user-emacs-directory "backups")))
       custom-file (concat user-emacs-directory "custom.el")
+      initial-scratch-message ""
       indent-tabs-mode nil
       require-final-newline t
+      shift-select-mode t
+      delete-by-moving-to-trash t
       ediff-window-setup-function #'ediff-setup-windows-plain
       ediff-split-window-function #'split-window-horizontally)
 
@@ -37,6 +41,7 @@
 (bind-key* "M-l" 'find-file)
 (bind-key* "M-j" 'dired-jump)
 (bind-key* "M-m" 'magit)
+(bind-key* "C-z" 'bury-buffer)
 
 (fset #'yes-or-no-p #'y-or-n-p)
 
