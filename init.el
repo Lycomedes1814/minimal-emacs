@@ -19,6 +19,7 @@
       custom-file (concat user-emacs-directory "custom.el")
       require-final-newline t)
 
+(add-hook 'eval-expression-minibuffer-setup-hook #'company-mode)
 (add-hook 'before-save-hook #'whitespace-cleanup)
 (add-hook 'magit-mode-hook (lambda () (save-some-buffers t)))
 (add-hook 'window-state-change-hook (lambda () (save-some-buffers t)))
