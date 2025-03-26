@@ -17,7 +17,8 @@
 
 (setq backup-directory-alist `((".*" . ,(concat user-emacs-directory "backups")))
       custom-file (concat user-emacs-directory "custom.el")
-      initial-scratch-message "")
+      require-final-newline t)
 
 (add-hook 'before-save-hook #'whitespace-cleanup)
 (add-hook 'magit-mode-hook (lambda () (save-some-buffers t)))
+(add-function :after after-focus-change-function (lambda () (save-some-buffers t)))
