@@ -1,8 +1,8 @@
 (load-theme 'tsdh-dark)
 
-(tool-bar-mode 0)
-(menu-bar-mode 0)
-(scroll-bar-mode 0)
+(ignore-errors (tool-bar-mode 0))
+(ignore-errors (menu-bar-mode 0))
+(ignore-errors (scroll-bar-mode 0))
 (blink-cursor-mode 0)
 
 (column-number-mode 1)
