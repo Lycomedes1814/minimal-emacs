@@ -1,9 +1,8 @@
 (load-theme 'tsdh-dark)
 
-(ignore-errors (tool-bar-mode 0))
-(ignore-errors (menu-bar-mode 0))
-(ignore-errors (scroll-bar-mode 0))
-(blink-cursor-mode 0)
+(dolist (m '(blink-cursor-mode tool-bar-mode
+             menu-bar-mode scroll-bar-mode))
+  (if (fboundp m) (funcall m 0)))
 
 (column-number-mode 1)
 (context-menu-mode 1)
